@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Let's surf · 방어동 항구 서핑</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap">
+  <header class="bar">
+    <h1>Let's surf</h1>
+    <dl class="hud" aria-live="off">
+      <div><dt>점수</dt><dd id="score">0</dd></div>
+      <div><dt>최고</dt><dd id="best">0</dd></div>
+      <div><dt>속도</dt><dd id="speed">1.0x</dd></div>
+    </dl>
+  </header>
+
+  <div class="stage">
+    <canvas id="game" width="800" height="400" aria-label="서핑 게임 화면"></canvas>
+    <div class="overlay" id="overlay">
+      <h2 id="ov-title">방어동 항구 서핑</h2>
+      <p id="ov-text">부표, 드럼통, 컨테이너는 점프로 넘고, 크레인 후크는 숙여서 피하세요.</p>
+      <button class="primary" id="start">게임 시작</button>
+    </div>
+  </div>
+
+  <div class="pad">
+    <button class="pad-btn" id="btn-duck" aria-label="숙이기">숙이기</button>
+    <button class="pad-btn" id="btn-jump" aria-label="점프">점프</button>
+  </div>
+
+  <p class="help">조작: 점프 Space 또는 ↑ · 숙이기 ↓ 또는 S · 일시정지 P. 화면을 탭해도 점프합니다.</p>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+:root{
+  --concrete:#eef1f2; --paper:#ffffff; --ink:#14232e; --muted:#5a6b76;
+  --hull:#1f4e6b; --water:#cfe3ea; --signal:#f2b705; --line:#d3dce0;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--concrete);color:var(--ink);
+  font-family:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.6;
+  -webkit-tap-highlight-color:transparent}
+.wrap{max-width:860px;margin:0 auto;padding:16px 16px 40px}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+.bar h1{margin:0;font-size:clamp(26px,5vw,36px);letter-spacing:-.02em;color:var(--hull)}
+.hud{display:flex;gap:18px;margin:0}
+.hud div{text-align:right}
+.hud dt{font-size:12px;color:var(--muted)}
+.hud dd{margin:0;font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}
+.stage{position:relative;border:3px solid var(--hull);border-bottom-width:6px;border-bottom-color:var(--signal);
+  border-radius:4px;overflow:hidden;background:var(--water);touch-action:manipulation}
+canvas{display:block;width:100%;height:auto;aspect-ratio:2/1}
+.overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:8px;text-align:center;padding:20px;background:rgba(20,35,46,.72);color:#fff}
+.overlay[hidden]{display:none}
+.overlay h2{margin:0;font-size:clamp(22px,5vw,34px)}
+.overlay p{margin:0 0 8px;max-width:30em}
+button{font:inherit;cursor:pointer}
+button:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
+.primary{min-height:48px;padding:0 28px;border:0;border-radius:4px;background:var(--signal);color:var(--ink);font-weight:700}
+.pad{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.pad-btn{min-height:56px;border:2px solid var(--hull);border-radius:4px;background:var(--paper);color:var(--hull);font-weight:700;font-size:18px;
+  user-select:none;-webkit-user-select:none;touch-action:none}
+.pad-btn:active,.pad-btn.on{background:var(--hull);color:#fff}
+.help{color:var(--muted);font-size:13px;margin:12px 0 0}
+@media (pointer:fine){ .pad{display:none} }
